@@ -27,6 +27,11 @@ jobs:
       with:
         node-version: '18'
         cache: 'npm'
+    - run: |
+        echo $PROJECT_NAME \
+        echo $MODULE_NAME \
+        echo $TAG \
+        echo $AWS_REGION
     - run: docker build -t $MODULE_FULLNAME $MODULE_NAME
     - run: |
         docker tag $MODULE_FULLNAME:$TAG \
